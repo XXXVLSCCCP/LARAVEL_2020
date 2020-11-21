@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdc70952-5e21-4692-95ce-e44b889a45c4" name="Default Changelist" comment="" />
+    <list default="true" id="bdc70952-5e21-4692-95ce-e44b889a45c4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/news.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/project.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -165,6 +172,10 @@
       <workItem from="1605792246340" duration="3414000" />
       <workItem from="1605952542763" duration="1731000" />
       <workItem from="1605955255211" duration="1718000" />
+<<<<<<< master
+=======
+      <workItem from="1605963879057" duration="1231000" />
+>>>>>>> local
     </task>
     <servers />
   </component>

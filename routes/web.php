@@ -11,16 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/news', function () {
-    return view('news');
-});
-Route::get('/project', function () {
-    return view('project');
-});
 
-Route::get('/phpinfo', function () {
-    phpinfo();
+
+Route::get('/welcome', function () {
+    return view('welcome');
 });
