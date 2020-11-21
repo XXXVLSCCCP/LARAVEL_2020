@@ -13,7 +13,7 @@
 <?php include('menu.php')?>
 <h2 style="text-align: center">Добро пожаловать на сайт</h2>
 
-//ИЗМЕНИЯ ДЛЯ Pull requests И ОТПРАВКИ ДЛЯ ПРОВЕРКИ
+//ИЗМЕНИЯ ДЛЯ Pull requests  И ОТПРАВКИ ДЛЯ ПРОВЕРКИ 2
 
 
 
