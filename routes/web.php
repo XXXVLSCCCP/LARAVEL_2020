@@ -11,12 +11,37 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/', 'HomeController@index')->name('home');
+
+
+Route::group(['prefix'=>'/news', 'as'=>'news.'], function(){
+
+
+    Route::group(['prefix'=>'category', 'as'=>'category.'], function(){
+        Route::get('/{category_id}', 'NewsController@category')->where('category_id','[0-9]+')->name('by_id');
+        Route::get('/{slug}', 'NewsController@categorySlug')->name('by_slug');
+        Route::get('/', 'CategoriesController@index')->name('by_index');
+
+    });
+    Route::get('/', 'NewsController@index')-> name('index');
+    Route::get('/{id}', 'NewsController@show')->name('show');
+    Route::get('/{id}/comments/{comment}', 'NewsController@add')->name('comment');
+
 });
-Route::get('/news', function () {
-    return view('news');
+Route::group(['prefix'=>'/admin', 'namespace'=>'Admin', 'as'=>'admin.'], function(){
+   Route::group(['prefix'=>'/news', 'as'=>'news.'], function(){
+    Route::get('/', 'NewsController@index')-> name('index');
+    Route::get('/{id}', 'NewsController@show')->name('show');
+    Route::post('/', 'NewsController@add')->name('add');
+
 });
+});
+
+
+
+
+
+
 Route::get('/project', function () {
     return view('project');
 });

@@ -10,8 +10,13 @@
 <body>
 <h1 style="text-align: center">Главная</h1>
 
-<?php include('menu.php')?>
-<h2 style="text-align: center">Добро пожаловать на сайт</h2>
+<ul>
+    <li><a href="/">Главная</a></li>
+    <li><a href="/project">Проект</a></li>
+    <li><a href="/news">Новости</a></li>
+</ul>
+
+<h2 style="text-align: center">Одна новость</h2>
 
 
 

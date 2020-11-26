@@ -5,16 +5,27 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Категории</title>
 </head>
 <body>
-<h1 style="text-align: center">Главная</h1>
 
-<?php include('menu.php')?>
-<h2 style="text-align: center">Добро пожаловать на сайт</h2>
+<h1>Новости первой категории</h1>
 
 
 
+
+
+<?php foreach ($news as $newsCtegory):?>
+
+<h3><?=$newsCtegory['title']?></h3>
+
+<p><?=$newsCtegory['text']?></p>
+
+
+
+<?php endforeach;
+
+?>
 
 
 

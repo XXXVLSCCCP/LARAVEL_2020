@@ -19,7 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdc70952-5e21-4692-95ce-e44b889a45c4" name="Default Changelist" comment="" />
+    <list default="true" id="bdc70952-5e21-4692-95ce-e44b889a45c4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Library/Calc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/News/category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/News/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/News/show.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel5.8.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel5.8.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +59,11 @@
       <server host="http://laravel5.8.test/" id="2683e369-c901-45df-a33c-e595b43ec3b5" name="laravel5.8.test" use_path_mappings="true">
         <path_mappings>
           <mapping local-root="$PROJECT_DIR$" remote-root="/home/vagrant/code/laravel5.8.test" />
+        </path_mappings>
+      </server>
+      <server host="laravel5.8.test" id="723af02c-cd5b-48aa-acb9-43a3a2b152f9" name="laravel5.8.test (1)" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/public" remote-root="/home/vagrant/code/laravel5.8.test/public" />
         </path_mappings>
       </server>
     </servers>
@@ -137,6 +156,16 @@
       <path value="$PROJECT_DIR$/vendor/filp/whoops" />
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kVidGEM6mebfanglUvM2VCRYp0" />
@@ -147,7 +176,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laravel8.0.test" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -159,6 +188,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sergey_VL\dev\code\laravel5.8.test\app\Http\Controllers" />
+      <recent name="C:\Users\Sergey_VL\dev\code\laravel5.8.test\resources\views\News" />
       <recent name="C:\Users\Sergey_VL\LESSON_2020\code\laravel5.8.test\resources\views" />
     </key>
   </component>
@@ -187,6 +218,8 @@
       <workItem from="1605952542763" duration="1731000" />
       <workItem from="1605955255211" duration="1718000" />
       <workItem from="1605963879057" duration="314000" />
+      <workItem from="1606157827584" duration="4755000" />
+      <workItem from="1606314624795" duration="32963000" />
     </task>
     <servers />
   </component>
@@ -203,6 +236,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="348" y="103" key="#Servers" timestamp="1605953559234">
@@ -213,10 +247,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="223" y="72" width="1089" height="751" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1605953601025" />
-    <state x="549" y="173" key="FileChooserDialogImpl" timestamp="1605957153373">
+    <state x="549" y="173" key="FileChooserDialogImpl" timestamp="1606377609585">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="173" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1605957153373" />
+    <state x="549" y="173" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1606377609585" />
     <state width="1342" height="247" key="GridCell.Tab.0.bottom" timestamp="1605957156063">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -265,9 +299,13 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1342" height="247" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1605957156064" />
-    <state x="604" y="341" key="NewPhpFileDialog" timestamp="1605802711928">
+    <state x="519" y="140" key="NewPhpClassDialog" timestamp="1606370106508">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="604" y="341" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1605802711928" />
+    <state x="519" y="140" key="NewPhpClassDialog/0.0.1536.834@0.0.1536.834" timestamp="1606370106508" />
+    <state x="604" y="341" key="NewPhpFileDialog" timestamp="1606333039384">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="604" y="341" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1606333039384" />
   </component>
 </project>
