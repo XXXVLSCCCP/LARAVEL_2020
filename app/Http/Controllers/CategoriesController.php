@@ -17,7 +17,7 @@ class CategoriesController extends Controller
 
 
 
-       return view('News.index',['news' => $category]);
+       return view('news.index',['news' => $category]);
 
 
     }

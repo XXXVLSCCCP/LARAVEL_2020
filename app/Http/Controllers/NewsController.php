@@ -12,22 +12,25 @@ class NewsController extends Controller
         $news=News::getNews();
 
 
-        return view('News.index',['news' => $news,]);
+        return view('news.index',['title'=>'Cписок новостей','news' => $news,]);
 
 }
     public function show($id){
-        return view('News.show');
+        $news=News::getNewsById($id);
+
+
+        return view('news.show', ['title'=>'Cписок новостей','news' => $news,]);
 
     }
     public function comments($id, $comment){
-        return view('News.show');
+        return view('news.show');
 
     }
     public function category($category_id){
 
         $news = News::getNewsByCategoryId($category_id);
 
-        return view('News.category',['news'=>$news]);
+        return view('news.category',['news'=>$news]);
 
     }
 
@@ -39,7 +42,7 @@ class NewsController extends Controller
 
 
 
-       return view('News.category',['news'=>$news]);
+       return view('news.category',['news'=>$news]);
 
     }
 

@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'IndexController@index')->name('home');
+Route::get('/project', 'IndexController@project')->name('project');
 
 
 Route::group(['prefix'=>'/news', 'as'=>'news.'], function(){
@@ -49,3 +50,7 @@ Route::get('/project', function () {
 Route::get('/phpinfo', function () {
     phpinfo();
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
