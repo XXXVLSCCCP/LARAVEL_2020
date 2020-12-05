@@ -17,7 +17,7 @@ class CategoriesController extends Controller
 
 
 
-       return view('news.index',['news' => $category]);
+       return view('news.category',['news' => $category]);
 
 
     }
@@ -30,7 +30,7 @@ class CategoriesController extends Controller
 
         $result = $calc->add(4)->$calc->sub(4)->$calc->add(4)->$calc->sub(4)->getResult();
 
-        dd($result);
+        return $result;
 
 
     }

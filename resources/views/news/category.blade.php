@@ -13,11 +13,9 @@
 
 
                     @foreach ($news as $newsCtegory)
-                    <div class="card-body">
-                        <h3>{{$newsCtegory['title']}}</h3>
-
-                        <p>{{$newsCtegory['text']}}</p>
-                    </div>
+                        <div style="width: 100%; height: 50px">
+                    <a href="category/{{$newsCtegory['slug']}}"  style="font-size: 18px; display: block; text-align: center" >{{$newsCtegory['title']}}</a>
+                        </div>
                     @endforeach
 
             </div>

@@ -30,10 +30,12 @@ Route::group(['prefix'=>'/news', 'as'=>'news.'], function(){
 
 });
 Route::group(['prefix'=>'/admin', 'namespace'=>'Admin', 'as'=>'admin.'], function(){
-   Route::group(['prefix'=>'/news', 'as'=>'news.'], function(){
-    Route::get('/', 'NewsController@index')-> name('index');
-    Route::get('/{id}', 'NewsController@show')->name('show');
-    Route::post('/', 'NewsController@add')->name('add');
+    Route::get('/','NewsController@homeAdmin')->name('home');
+    Route::group(['prefix'=>'/news', 'as'=>'news.'], function(){
+    Route::match(['get','post'],'/', 'NewsController@index')-> name('index');
+    Route::match(['get','post'],'/add', 'NewsController@add')->name('add');
+    Route::get('/edit', 'NewsController@editAdmin')->name('edit');
+    Route::get('/delete/{id}', 'NewsController@deliteNew')->name('delete');
 
 });
 });
@@ -54,3 +56,22 @@ Route::get('/phpinfo', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('storage/{filename}', function ($filename){
+    $path= storage_path('app/public/' . $filename);
+
+
+
+    if(!File::exists($path)){
+
+        abort(404);
+    }
+
+        $file=File::get($path);
+        $type=File::mimeType($path);
+        $response=Response::make($file,200);
+        $response->header('Content-Type', $type);
+
+
+        return $response;
+});
