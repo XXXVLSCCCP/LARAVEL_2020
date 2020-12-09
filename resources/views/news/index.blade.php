@@ -19,28 +19,32 @@
                         Новостей нет
 
 
-                        @else
+                    @else
 
                         @forelse($news as $item)
 
-                            @if(!$item['is_private'])
+                            @if($item->is_private)
 
-                            <figure class="figure">
-                                <h4>{{$item['title']}}</h4>
-                                @if(!$item['image'])
-                                <img src="http://placehold.it/100x100" style="float: left; padding: 10px; margin: 0" class="figure-img img-fluid rounded" alt="Фото">
+                                <figure class="figure">
+                                    <h4>{{$item->title}}</h4>
+                                    @if(!$item->image)
+                                        <img src="http://placehold.it/100x100"
+                                             style="float: left; padding: 10px; margin: 0"
+                                             class="figure-img img-fluid rounded" alt="Фото">
 
-                                @else
+                                    @else
 
-                                    <img src="{{$item['image']}}" style="float: left; padding: 10px; margin: 0" class="figure-img img-fluid rounded" alt="Фото">
+                                        <img src="{{$item->image}}" style="float: left; padding: 10px; margin: 0"
+                                             class="figure-img img-fluid rounded" alt="Фото">
 
-                                  @endif
-                                    <figcaption style="text-overflow: clip; overflow: hidden; height: 160px" class="figure-caption">{{$item['text']}}
-                                </figcaption>
+                                    @endif
+                                    <figcaption style="text-overflow: clip; overflow: hidden; height: 160px"
+                                                class="figure-caption">{{$item->text}}
+                                    </figcaption>
 
 
-                            </figure>
-                                <a style="display: block" href="/news/{{$item['id']}}">Подробнее.....</a>
+                                </figure>
+                                <a style="display: block" href="/news/{{$item->id}}">Подробнее.....</a>
 
                                 <hr>
 
@@ -53,9 +57,7 @@
                             Новостей нет
 
                         @endforelse
-                        @endif
-
-
+                    @endif
 
 
                 </div>

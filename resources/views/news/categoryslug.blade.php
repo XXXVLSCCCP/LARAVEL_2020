@@ -14,14 +14,14 @@
 
                     @foreach ($news as $newsCtegory)
                     <figure class="figure">
-                        <h4>{{$newsCtegory['title']}}</h4>
-                        <img src="{{$newsCtegory['image']}}" style="float: left; padding: 10px; margin: 0; width: 100px" class="figure-img img-fluid rounded" alt="Фото">
-                        <figcaption style="text-overflow: clip; overflow: hidden; height: 160px" class="figure-caption">{{$newsCtegory['text']}}
+                        <h4>{{$newsCtegory->title}}</h4>
+                        <img src="{{$newsCtegory->image}}" style="float: left; padding: 10px; margin: 0; width: 100px" class="figure-img img-fluid rounded" alt="Фото">
+                        <figcaption style="text-overflow: clip; overflow: hidden; height: 160px" class="figure-caption">{{$newsCtegory->text}}
                         </figcaption>
 
 
                     </figure>
-                    <a style="float: right" href="/news/{{$newsCtegory['id']}}">Подробнее.....</a>
+                    <a style="float: right" href="/news/{{$newsCtegory->id}}">Подробнее.....</a>
 
                     <hr>
 

@@ -4,6 +4,7 @@
 namespace App\models;
 
 use Storage;
+use DB;
 
 
 class News
@@ -54,24 +55,29 @@ class News
     public static function getNews()
     {
 
-        return self::readNews();
+        return DB::select("SELECT * FROM news");
+        //return self::readNews();
     }
 
-    public static function getNewsByCategoryId($category_id)
+    public static function getNewsByCategoryId($id)
     {
 
-        $news = [];
-
-        foreach (self::getNews() as $category) {
-            if ($category['category_id'] == $category_id) {
-
-                $news[] = $category;
+      $news=DB::table('news')
+          ->where('category_id','=',$id)->get();
 
 
-            }
-
-        }
-
+//        $news = [];
+//
+//        foreach (self::getNews() as $category) {
+//            if ($category['category_id'] == $category_id) {
+//
+//                $news[] = $category;
+//
+//
+//            }
+//
+//        }
+//
         return $news;
     }
 
@@ -79,17 +85,20 @@ class News
     public static function getNewsById($id)
     {
 
-        $news = [];
 
-        foreach (self::getNews() as $item) {
-            if ($item['id'] == $id) {
+        $news=DB::select("SELECT*FROM news where id= :id",['id'=>$id]);
 
-                $news[] = $item;
-
-
-            }
-
-        }
+//        $news = [];
+//
+//        foreach (self::getNews() as $item) {
+//            if ($item->id == $id) {
+//
+//                $news[] = $item;
+//
+//
+//            }
+//
+//        }
 
         return $news;
     }
@@ -164,17 +173,21 @@ class News
 
     public static function deleteNews($id)
     {
-        $news = self::getNews();
-        $output = [];
 
-        foreach ($news as $item)
 
-            if ($item['id'] != $id) {
 
-                $output[] = $item;
-            }
-
-        self::saveNews($output);
+        DB::select("DELETE FROM news WHERE id=:id",['id'=>$id]);
+//        $news = self::getNews();
+//        $output = [];
+//
+//        foreach ($news as $item)
+//
+//            if ($item['id'] != $id) {
+//
+//                $output[] = $item;
+//            }
+//
+//        self::saveNews($output);
 
         return redirect('admin.news.edit');
     }

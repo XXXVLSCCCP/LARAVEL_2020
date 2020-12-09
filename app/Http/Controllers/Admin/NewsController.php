@@ -9,25 +9,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\models\News;
 use Storage;
+use DB;
 
 
 class NewsController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
 
 
-        if ($request->method() == 'POST') {
 
-            $request->flash();
-            $errors = [];
-            $errors[] = 'Имя заголовка не может быть пустым';
-            $request->session()->flash('errors', $errors);
-
-            return redirect()->route('admin.news');
-        }
-
-        return view('admin.news.index', ['categories' => Category::getCategories()]);
+        return view('admin.news.index');
 
 
     }
@@ -82,7 +74,12 @@ class NewsController extends Controller
     public function editAdmin()
     {
 
-        return view('admin.news.edit', ['news' => News::getNews()]);
+        //$news=DB::select("SELECT * FROM news");
+
+        $news=News::getNews();
+
+
+        return view('admin.news.edit', ['news' => $news]);
     }
 
     public function deliteNew($id)
