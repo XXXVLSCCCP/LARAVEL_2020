@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\models;
-use app\models\News;
+namespace App\Models;
+use app\Models\News1;
 
-class Category
+class Category1
 {
     const CATEGORIES=[
         ['id'=>'1',

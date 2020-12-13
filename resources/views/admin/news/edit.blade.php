@@ -8,8 +8,8 @@
                 <div class="card-header">Добавить новость</div>
 
                 <div class="card-body">
-                    <a href="/admin/news/add" style="margin: 30px; " class="btn btn-success">Добавить новость</a>
-
+                    <a href="{{ route('admin.news.add')}}" style="margin: 30px; " class="btn btn-success">Добавить новость</a>
+{{--                    @dd($news);--}}
                     @if(@empty($news))
 
                         Новостей нет
@@ -19,33 +19,33 @@
 
                         @forelse($news as $item)
 
-                                <figure class="figure" style="display: block">
-                                    <h4>{{$item->title}}</h4>
-                                    @if(!$item->image)
-                                        <img src="http://placehold.it/100x100"
-                                             style="float: left; padding: 10px; margin: 0"
-                                             class="figure-img img-fluid rounded" alt="Фото">
+                            <figure class="figure" style="display: block">
+                                <h4>{{$item->title}}</h4>
+                                @if(!$item->image)
+                                    <img src="http://placehold.it/100x100"
+                                         style="float: left; padding: 10px; margin: 0"
+                                         class="figure-img img-fluid rounded" alt="Фото">
 
-                                    @else
+                                @else
 
-                                        <img src="{{$item->image}}" style="float: left; padding: 10px; margin: 0"
-                                             class="figure-img img-fluid rounded" alt="Фото">
+                                    <img src="{{$item->image}}" style="float: left; padding: 10px; margin: 0"
+                                         class="figure-img img-fluid rounded" alt="Фото">
 
-                                    @endif
-                                    <figcaption style="text-overflow: clip; overflow: hidden; height: 160px"
-                                                class="figure-caption">{{$item->text}}
-                                    </figcaption>
+                                @endif
+                                <figcaption style="text-overflow: clip; overflow: hidden; height: 160px"
+                                            class="figure-caption">{{$item->text}}
+                                </figcaption>
 
 
-                                </figure>
-                                <div style="display: inline-block">
-                                    <a type="button" class="btn btn-primary">Редактировать</a>
-                                    <a href="/admin/news/delete/{{$item->id}}" class="btn btn-danger">Удалить</a>
-                                    <a style=" margin-left: 50px" href="/news/{{$item->id}}">Подробнее.....</a>
+                            </figure>
+                            <div style="display: inline-block">
+                                <a href="{{ route('admin.news.edit_add',['id'=>$item->id]) }}" type="button" class="btn btn-primary">Редактировать</a>
+                                <a href='{{route('admin.news.delete',$item)}}' class="btn btn-danger">Удалить</a>
+                                <a style=" margin-left: 50px" href="/news/{{$item->id}}">Подробнее.....</a>
 
-                                    <hr>
+                                <hr>
 
-                                </div>
+                            </div>
 
 
                         @empty
@@ -54,6 +54,8 @@
 
                         @endforelse
                     @endif
+
+                    {{$news->links()}}
                 </div>
             </div>
         </div>

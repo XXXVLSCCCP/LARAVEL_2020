@@ -34,6 +34,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'as' => 'admin.'], f
     Route::group(['prefix' => '/news', 'as' => 'news.'], function () {
         Route::match(['get', 'post'], '/', 'NewsController@index')->name('index');
         Route::match(['get', 'post'], '/add', 'NewsController@add')->name('add');
+        Route::match(['get', 'post'], '/edit_add/{news}', 'NewsController@edit_add')->name('edit_add');
         Route::get('/edit', 'NewsController@editAdmin')->name('edit');
         Route::get('/delete/{id}', 'NewsController@deliteNew')->name('delete');
 

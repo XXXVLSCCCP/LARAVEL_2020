@@ -18,7 +18,6 @@
 
                         Новостей нет
 
-
                     @else
 
                         @forelse($news as $item)
@@ -41,15 +40,10 @@
                                     <figcaption style="text-overflow: clip; overflow: hidden; height: 160px"
                                                 class="figure-caption">{{$item->text}}
                                     </figcaption>
-
-
                                 </figure>
                                 <a style="display: block" href="/news/{{$item->id}}">Подробнее.....</a>
 
                                 <hr>
-
-
-
                             @endif
 
                         @empty
@@ -59,7 +53,7 @@
                         @endforelse
                     @endif
 
-
+                     {{$news->links()}}
                 </div>
             </div>
         </div>

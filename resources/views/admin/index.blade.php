@@ -12,7 +12,7 @@
                 <div class="card-header">Главная Админки</div>
 
                 <div class="card-body">
-                    <a href="admin/news/edit">Редактировать новости</a>
+                    <a href="/admin/news/edit">Редактировать новости</a>
                 </div>
             </div>
         </div>

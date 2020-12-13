@@ -21,7 +21,8 @@
                     <form method="POST" action="{{route ('admin.news.add')}}" enctype='multipart/form-data'>
                         @csrf
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Заголовок" name="title" value="{{old('title')}}">
+                            <input class="form-control" type="text" placeholder="Заголовок" name="title"
+                                   value="{{old('title')}}">
                         </div>
                         <div class="form-group">
                             <select class="form-control" name="category_id" id="">
@@ -35,7 +36,8 @@
 
                                 @foreach($categories as $category)
 
-                                    <option value="{{$category['id']}}" @if(old('category_id')== $category['id']) selected @endif>{{$category['title']}}</option>
+                                    <option value="{{$category['id']}}"
+                                            @if(old('category_id')== $category['id']) selected @endif>{{$category['title']}}</option>
 
                                 @endforeach
                             </select>

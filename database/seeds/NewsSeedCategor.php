@@ -11,33 +11,35 @@ class NewsSeedCategor extends Seeder
      */
     public function run()
     {
-        \DB::table('category')->insert($this->getData());
+        \DB::table('category')->insert([
+
+            ['id'=>'1',
+                'slug'=>'sport',
+                'title'=>'Новость о спотре',
+                'text'=>'Лучшая новость о спотре',
+            ],
+            ['id'=>'2',
+                'slug'=>'programming',
+                'title'=>'Новость о программировании',
+                'text'=>'Лучшая новость о программирвоании',
+
+            ],
+            ['id'=>'3',
+                'slug'=>'games',
+                'title'=>'Новость о компьютерных играх',
+                'text'=>'Лучшая новость компьютерной игре',
+            ],
+
+            ['id'=>'4',
+                'slug'=>'city',
+                'title'=>'Новость города',
+                'text'=>'Лучшая новость города',
+            ],
+
+        ]);
 
     }
 
-    private function getData(){
 
-        $faker=Faker\Factory::create('ru_RU');
-        $data = [];
-
-
-        for ($i = 0; $i < 10; $i++) {
-
-//            'slug'=>'sport',
-//           'title'=>'Новость о спотре',
-//           'text'=>'Лучшая новость о спотре',
-
-            $data[] =
-                [
-                    'slug' => '1',
-                    'title' => $faker->sentence(rand(3,10)),
-                    'text' => $faker->text(rand(100,3000)),
-                ];
-
-
-        }
-
-        return $data;
-    }
 }
 

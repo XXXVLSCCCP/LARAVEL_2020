@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App\models;
+namespace App\Models;
 
 use Storage;
 use DB;
 
 
-class News
+class News1
 {
 //    const news = [
 //        ['id' => '1',
@@ -108,7 +108,7 @@ class News
         $news = [];
 
 
-        $category = Category::getCategoryBySlug($slug);
+        $category = Category1::getCategoryBySlug($slug);
 
         if (!empty($category['id'])) {
             $news = self::getNewsByCategoryId($category['id']);
@@ -120,36 +120,60 @@ class News
 
     }
 
-    public static function saveNews($news)
+//    public static function saveNews($news)
+//    {
+//
+//        Storage::put('news.json', json_encode($news));
+//
+//    }
+
+//    public static function readNews()
+//    {
+//
+//        return json_decode(Storage::get('news.json'), true);
+//
+//    }
+
+//    public static function getLastId()
+//    {
+//        $id = 1;
+//
+//        foreach (self::getNews() as $item) {
+//            if ($item['id'] > $id) {
+//                $id = $item['id'];
+//            }
+//        }
+//        return $id;
+//    }
+
+    public static function addNews($request)
     {
+//          dd($request->all());
+//            $request->flash();
+            $errors = [];
+            $errors[] = 'Имя заголовка не может быть пустым';
+            $request->session()->flash('errors1', $errors);
+//           dump($request->all());
+//           dd($request->hasFile('image'));
 
-        Storage::put('news.json', json_encode($news));
+            $newsItem = $request->only([
+                'category_id',
+                'is_private',
+                'title',
+                'text'
+            ]);
 
-    }
 
-    public static function readNews()
-    {
-
-        return json_decode(Storage::get('news.json'), true);
-
-    }
-
-    public static function getLastId()
-    {
-        $id = 1;
-
-        foreach (self::getNews() as $item) {
-            if ($item['id'] > $id) {
-                $id = $item['id'];
+            if ($request->hasFile('image')) {
+                $path = Storage::putFile('public', $request->file('image'));
+                $newsItem['image'] = Storage::url($path);
             }
-        }
-        return $id;
-    }
 
-    public static function addNews(array $array)
-    {
+            $array=$newsItem;
 
-        $array['id'] = self::getLastId() + 1;
+
+//            return redirect()->route('admin.news.add');
+//        $array['id'] = self::getLastId() + 1;
 
         if (empty($array['is_private'])) {
             $array['is_private'] = false;
@@ -163,11 +187,20 @@ class News
         }
 
 
-        $news = self::getNews();
+        $news = $array;
 
-        $news[] = $array;
 
-        self::saveNews($news);
+        //DB::select("INSERT INTO news ('category_id', 'image', 'is_private', 'title', 'text') VALUES ({{$array['category_id']}},{{$news['image']}},{{$news['is_private']}},{{$news['title']}}, {{$news['text']}})");
+DB::table('news')->insert([
+    'category_id'=>$news['category_id'],
+    'image'=>$news['image'],
+    'is_private'=>$news['is_private'],
+    'title'=>$news['title'],
+    'text'=>$news['text'],
+]);
+
+
+//        return redirect()->route('admin.news.add');
 
     }
 

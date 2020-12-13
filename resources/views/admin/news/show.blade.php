@@ -13,7 +13,7 @@
 
                 <div class="card-body">
                     @foreach($news as $item)
-                      <h7>{{$item['title']}}</h7>
+                        <h7>{{$item['title']}}</h7>
                         <p>{{$item['text']}}</p>
                     @endforeach
                 </div>
