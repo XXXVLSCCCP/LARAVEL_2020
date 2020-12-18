@@ -8,58 +8,60 @@
                 <div class="card-header">Добавить новость</div>
 
                 <div class="card-body">
-
-                    @if(session()->has('errors1'))
-                        @foreach(session()->get('errors1') as $error)
-                            <div class="alert alert-danger">
-                                {{$error}}
-                            </div>
-
-                        @endforeach
-                    @endif
-
-                    <form method="POST" action="{{route ('admin.news.add')}}" enctype='multipart/form-data'>
-                        @csrf
-                        <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Заголовок" name="title"
-                                   value="{{old('title')}}">
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control" name="category_id" id="">
+                    <a href="{{ route('admin.create')}}" style="margin: 30px; " class="btn btn-success">Добавить новость</a>
 
 
-                                @if(!empty($errors))
+                        @forelse($news as $item)
 
-                                    <div class="alert alert-danger"></div>
+                            <figure class="figure" style="display: block">
+                                <h4>{{$item->title}}</h4>
+                                @if(!$item->image)
+                                    <img src="http://placehold.it/100x100"
+                                         style="float: left; padding: 10px; margin: 0"
+                                         class="figure-img img-fluid rounded" alt="Фото">
+
+                                @else
+
+                                    <img src="{{$item->image}}" style="float: left; padding: 10px; margin: 0"
+                                         class="figure-img img-fluid rounded" alt="Фото">
 
                                 @endif
+                                <figcaption style="text-overflow: clip; overflow: hidden; height: 160px"
+                                            class="figure-caption">{{$item->text}}
+                                </figcaption>
 
-                                @foreach($categories as $category)
 
-                                    <option value="{{$category['id']}}"
-                                            @if(old('category_id')== $category['id']) selected @endif>{{$category['title']}}</option>
+                            </figure>
+                            <div style="display: inline-block">
+                                <a href="{{ route('admin.edit',$item) }}" type="button" class="btn btn-primary">Редактировать</a>
+                                <a href='{{route('admin.destroy',$item)}}' class="btn btn-danger"
 
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" name="text">{{old('text')}}</textarea>
-                        </div>
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('delete-form').submit();">
 
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Приватная</label>
-                        </div>
 
-                        <div class="form-group">
-                            <input class="form-control" type="file" name="image" value="Картинка">
-                        </div>
+                                    Удалить</a>
 
-                        <div class="form-group">
-                            <input class="form-control" type="submit" value="Отправить">
-                        </div>
+                                <form id="delete-form" action="{{ route('admin.destroy',$item)}}" method="POST" style="display: none;">
 
-                    </form>
+                                    @method('DELETE')
+                                    @csrf
+                                </form>
+                                <a style=" margin-left: 50px" href="{{route('admin.show',[$item->id])}}">Подробнее.....</a>
+
+                                <hr>
+
+                            </div>
+
+
+                        @empty
+
+                            Новостей нет
+
+                        @endforelse
+
+
+                    {{$news->links()}}
                 </div>
             </div>
         </div>

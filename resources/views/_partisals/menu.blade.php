@@ -12,6 +12,6 @@
         <a class="nav-link" href="/news">Новости</a>
     </li>
     <li>
-        <a class="nav-link" href="/admin">Админка</a>
+        <a class="nav-link" href="{{route('admin.index')}}">Админка</a>
     </li>
 </ul>

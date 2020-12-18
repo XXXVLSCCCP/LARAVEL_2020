@@ -14,11 +14,7 @@
                 <div class="card-body">
 
 
-                    @if(@empty($news))
 
-                        Новостей нет
-
-                    @else
 
                         @forelse($news as $item)
 
@@ -44,6 +40,9 @@
                                 <a style="display: block" href="/news/{{$item->id}}">Подробнее.....</a>
 
                                 <hr>
+
+                            @else
+                                <h4 style="height: 100px; display: block; text-align: center">Чтобы видеть эти новости зарегистрируйтесь на сайте</h4>
                             @endif
 
                         @empty
@@ -51,7 +50,13 @@
                             Новостей нет
 
                         @endforelse
-                    @endif
+
+
+
+
+
+
+
 
                      {{$news->links()}}
                 </div>

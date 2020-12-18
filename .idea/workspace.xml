@@ -20,38 +20,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdc70952-5e21-4692-95ce-e44b889a45c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/news/add1.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/CategoryFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ru/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ru/pagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ru/passwords.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ru/validation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/_partisals/flash-message.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/web1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Browser/test/AdminNewsTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/laravel5.8.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel5.8.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.styleci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.styleci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/News1Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/News1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/News.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/NewsSeedCategor.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/NewsSeedCategor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/NewsFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/NewsFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/NewsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/NewsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/_partisals/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_partisals/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/_partisals/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_partisals/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/_partisals/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_partisals/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/_partisals/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_partisals/menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/news/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/add1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/index1.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/news/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/news/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/news/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/news/category.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/news/categoryslug.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/news/categoryslug.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/news/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/news/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/project.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/project.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,6 +189,9 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/laravel/dusk" />
+      <path value="$PROJECT_DIR$/vendor/php-webdriver/webdriver" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kVidGEM6mebfanglUvM2VCRYp0" />
@@ -198,7 +202,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/news" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/factories" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -211,18 +215,31 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sergey_VL\dev\code\laravel5.8.test\database\factories" />
+      <recent name="C:\Users\Sergey_VL\dev\code\laravel5.8.test\tests\Browser\test" />
+      <recent name="C:\Users\Sergey_VL\dev\code\laravel5.8.test\resources\lang" />
+      <recent name="C:\Users\Sergey_VL\dev\code\laravel5.8.test\routes" />
       <recent name="C:\Users\Sergey_VL\dev\code\laravel5.8.test\resources\views\admin\news" />
-      <recent name="C:\Users\Sergey_VL\dev\code\laravel5.8.test\tests\Feature" />
-      <recent name="C:\Users\Sergey_VL\dev\code\laravel5.8.test\tests\Unit" />
-      <recent name="C:\Users\Sergey_VL\dev\code\laravel5.8.test\resources\views\admin" />
-      <recent name="C:\Users\Sergey_VL\dev\code\laravel5.8.test\app\Http\Controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sergey_VL\dev\code\laravel5.8.test\app\Http\Controllers\Admin" />
       <recent name="C:\Users\Sergey_VL\dev\code\laravel5.8.test\resources\views\news" />
       <recent name="C:\Users\Sergey_VL\dev\code\laravel5.8.test\resources\views\_partisals" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.CalcTest">
+  <component name="RunManager" selected="PHPUnit.AdminNewsTest.admin_it_can_edit_news (2)">
+    <configuration name="AdminNewsTest.admin_it_can_edit_news (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\test\AdminNewsTest" configuration_file="/home/vagrant/code/laravel5.8.test/phpunit.xml" file="$PROJECT_DIR$/tests/Browser/test/AdminNewsTest.php" method="admin_it_can_edit_news" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="AdminNewsTest.admin_it_can_edit_news (2)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Browser\test\AdminNewsTest" configuration_file="/home/vagrant/code/laravel5.8.test/phpunit.xml" file="$PROJECT_DIR$/tests/Browser/test/AdminNewsTest.php" method="admin_it_can_edit_news" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="AdminNewsTest.admin_it_can_edit_news" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Browser\AdminNewsTest" configuration_file="/home/vagrant/code/laravel5.8.test/phpunit.xml" file="$PROJECT_DIR$/tests/Browser/test/AdminNewsTest.php" method="admin_it_can_edit_news" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="CalcTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Unit\CalcTest" configuration_file="/home/vagrant/code/laravel5.8.test/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/CalcTest.php" scope="Class" />
       <method v="2" />
@@ -243,9 +260,15 @@
       <item itemvalue="PHPUnit.phpunit.xml" />
       <item itemvalue="PHPUnit.ExampleTest.testBasicTest" />
       <item itemvalue="PHPUnit.CalcTest" />
+      <item itemvalue="PHPUnit.AdminNewsTest.admin_it_can_edit_news" />
+      <item itemvalue="PHPUnit.AdminNewsTest.admin_it_can_edit_news (1)" />
+      <item itemvalue="PHPUnit.AdminNewsTest.admin_it_can_edit_news (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.AdminNewsTest.admin_it_can_edit_news (2)" />
+        <item itemvalue="PHPUnit.AdminNewsTest.admin_it_can_edit_news (1)" />
+        <item itemvalue="PHPUnit.AdminNewsTest.admin_it_can_edit_news" />
         <item itemvalue="PHPUnit.CalcTest" />
         <item itemvalue="PHPUnit.ExampleTest.testBasicTest" />
       </list>
@@ -271,7 +294,11 @@
       <workItem from="1607107651538" duration="59435000" />
       <workItem from="1607634842845" duration="3154000" />
       <workItem from="1607698307482" duration="37794000" />
-      <workItem from="1607878341591" duration="13310000" />
+      <workItem from="1607878341591" duration="14148000" />
+      <workItem from="1607965093558" duration="17785000" />
+      <workItem from="1608044057565" duration="11794000" />
+      <workItem from="1608228240991" duration="9525000" />
+      <workItem from="1608295142979" duration="18949000" />
     </task>
     <servers />
   </component>
@@ -303,34 +330,38 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="223" y="72" width="1089" height="751" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1605953601025" />
-    <state x="524" y="219" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607181492803">
+    <state x="524" y="219" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608236580506">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="524" y="219" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1607181492803" />
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607793445384">
+    <state x="524" y="219" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1608236580506" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607987856139">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1607793445384" />
-    <state x="549" y="173" key="FileChooserDialogImpl" timestamp="1607199906112">
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1607987856139" />
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607987807608">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="173" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1607199906112" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1607548190786">
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1607987807608" />
+    <state x="549" y="173" key="FileChooserDialogImpl" timestamp="1608325679214">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1607548190786" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1607548190786">
+    <state x="549" y="173" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1608325679214" />
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1608328290755">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1607548190786" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1607548190785">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608328290755" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1608328290755">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1607548190785" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1607548190786">
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1608328290755" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1608328290755">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1607548190786" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1608328290755" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1608328290755">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1608328290755" />
     <state width="1342" height="247" key="GridCell.Tab.1.bottom" timestamp="1605957156064">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -367,10 +398,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="519" y="140" key="NewPhpClassDialog/0.0.1536.834@0.0.1536.834" timestamp="1606675643342" />
-    <state x="604" y="341" key="NewPhpFileDialog" timestamp="1606675667611">
+    <state x="604" y="341" key="NewPhpFileDialog" timestamp="1608295349015">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="604" y="341" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1606675667611" />
+    <state x="604" y="341" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1608295349015" />
     <state x="561" y="120" key="RollbackChangesDialog" timestamp="1607727435293">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -387,5 +418,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="478" y="0" width="579" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1607701604441" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1608325337831">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1608325337831" />
   </component>
 </project>

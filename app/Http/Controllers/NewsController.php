@@ -22,7 +22,7 @@ class NewsController extends Controller
 
     public function show($id)
     {
-       $news = News1::getNewsById($id);
+       $news = News::all()->where('id',$id);
 
 //       $news = News::find($id);
 //        dd($id);

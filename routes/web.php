@@ -26,19 +26,31 @@ Route::group(['prefix' => '/news', 'as' => 'news.'], function () {
     });
     Route::get('/', 'NewsController@index')->name('index');
     Route::get('/{id}', 'NewsController@show')->name('show');
-    Route::get('/{id}/comments/{comment}', 'NewsController@add')->name('comment');
+    Route::get('/{id}/comments/{comment}', 'News1Controller@add')->name('comment');
 
 });
-Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
-    Route::get('/', 'NewsController@homeAdmin')->name('home');
-    Route::group(['prefix' => '/news', 'as' => 'news.'], function () {
-        Route::match(['get', 'post'], '/', 'NewsController@index')->name('index');
-        Route::match(['get', 'post'], '/add', 'NewsController@add')->name('add');
-        Route::match(['get', 'post'], '/edit_add/{news}', 'NewsController@edit_add')->name('edit_add');
-        Route::get('/edit', 'NewsController@editAdmin')->name('edit');
-        Route::get('/delete/{id}', 'NewsController@deliteNew')->name('delete');
+//Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
+//    Route::get('/', 'News1Controller@homeAdmin')->name('home');
+//    Route::group(['prefix' => '/news', 'as' => 'news.'], function () {
+//        Route::match(['get', 'post'], '/', 'News1Controller@index')->name('index');
+//        Route::match(['get', 'post'], '/add', 'News1Controller@add')->name('add');
+//        Route::match(['get', 'post'], '/edit_add/{news}', 'News1Controller@edit_add')->name('edit_add');
+//        Route::get('/edit', 'News1Controller@editAdmin')->name('edit');
+//        Route::get('/delete/{id}', 'News1Controller@deliteNew')->name('delete');
+//
+//    });
+//});
 
-    });
+
+
+Route::group(['prefix'=>'/admin','namespace'=>'Admin', 'as'=>'admin.' ], function(){
+    Route::get('/','NewsController@index')->name('index');
+    Route::get('/create','NewsController@create')->name('create');
+    Route::post('/','NewsController@store')->name('store');
+    Route::get('/{news}','NewsController@show')->name('show');
+    Route::get('/{news}/edit','NewsController@edit')->name('edit');
+    Route::DELETE('/{news}','NewsController@destroy')->name('destroy');
+    Route::patch('/{news}','NewsController@update')->name('update');
 });
 
 
@@ -54,20 +66,25 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('storage/{filename}', function ($filename) {
-    $path = storage_path('app/public/' . $filename);
+//Route::get('storage/{filename}', function ($filename) {
+//    $path = storage_path('app/public/' . $filename);
+//
+//
+//    if (!File::exists($path)) {
+//
+//        abort(404);
+//    }
+//
+//    $file = File::get($path);
+//    $type = File::mimeType($path);
+//    $response = Response::make($file, 200);
+//    $response->header('Content-Type', $type);
+//
+//
+//    return $response;
+//});
 
 
-    if (!File::exists($path)) {
-
-        abort(404);
-    }
-
-    $file = File::get($path);
-    $type = File::mimeType($path);
-    $response = Response::make($file, 200);
-    $response->header('Content-Type', $type);
 
 
-    return $response;
-});
+

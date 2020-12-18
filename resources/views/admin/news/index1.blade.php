@@ -37,7 +37,7 @@
                                 @foreach($categories as $category)
 
                                     <option value="{{$category['id']}}"
-                                            @if(old('category_id')== $category['id']  ) selected @endif>{{$category['title']}}</option>
+                                            @if(old('category_id')== $category['id']) selected @endif>{{$category['title']}}</option>
 
                                 @endforeach
                             </select>
@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="is_private" name="is_private">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Приватная</label>
                         </div>
 
@@ -66,4 +66,5 @@
     </div>
 </div>
 @endsection
+
 

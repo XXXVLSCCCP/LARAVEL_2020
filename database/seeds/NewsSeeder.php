@@ -16,7 +16,7 @@ class NewsSeeder extends Seeder
       //  \DB::table('news')->insert($this->getData());
 
 
-        $news=factory(\App\Models\News::class, 3)->create();
+        $news=factory(\App\Models\News::class, 4)->create();
 
     }
 

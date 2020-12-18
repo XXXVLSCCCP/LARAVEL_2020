@@ -2,163 +2,136 @@
 
 namespace App\Http\Controllers\Admin;
 
-use http\Env\Response;
-use Session;
-use App\Models\Category1;
+use App\Models\Category;
+use App\Models\News;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\News1;
-use App\Models\News;
-use App\Models\Category;
-
 use Storage;
-use DB;
-
+use Validator;
 
 class NewsController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
 
+          $news=News::orderByDesc('id')->paginate(2);
 
-        return view('admin.news.index');
+
+        return view('admin.news.index',['news'=>$news]);
+
 
     }
 
-    public function add(News $news, Request $request)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('admin.news.add',['categories'=>Category::all(),'news'=>News::all()]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
 
-        if ($request->method() == 'POST') {
-            $errors = [];
-            $errors[] = 'Имя заголовка не может быть пустым';
-            $request->session()->flash('errors1', $errors);
-//           dump($request->all());
-//           dd($request->hasFile('image'));
-
-            $newsItem = $request->only([
-                'category_id',
-                'is_private',
-                'title',
-                'text'
-            ]);
-
-            if ($request->hasFile('image')) {
-                $path = Storage::putFile('public', $request->file('image'));
-                $newsItem['image'] = Storage::url($path);
-            }
-
-//            return redirect()->route('admin.news.add');
-//        $array['id'] = self::getLastId() + 1;
-
-            if (empty($newsItem['is_private'])) {
-                $newsItem['is_private'] = false;
-            } else {
-                $newsItem['is_private'] = true;
-            }
-
-            if (!isset($array['image'])) {
-                $newsItem['image'] = "";
-            }
-            if ($request->hasFile('image')) {
-                $path = Storage::putFile('public', $request->file('image'));
-                $newsItem['image'] = Storage::url($path);
-            }
-
-//            DB::table('news')->insert([
-//                'category_id'=>$newsItem['category_id'],
-//                'image'=>$newsItem['image'],
-//                'is_private'=>$newsItem['is_private'],
-//                'title'=>$newsItem['title'],
-//                'text'=>$newsItem['text'],
-//            ]);
-
-            News::create($newsItem);
-
-            return redirect()->route('admin.news.add');
-        }
-//        $view=view('admin.news.add',['categories'=> Category1::getCategories()])->render();
-//        return response($view)
-//            ->header('Content-Type', 'application/txt')
-//            ->header('Content-Disposition', 'attachment; filename="add.html"');
+        $request->validate(News::rules());
 
 
-            return view('admin.news.add1', ['categories' => Category::all()]);
+        $news=News::create( $request->all());
 
-    }
+        if($request->hasFile('image')){
 
-    public function edit_add( News $news, Request $request){
+            $path= \Storage::putFile('public', $request->file('image'));
 
-//        $news= News::find($id);
-
-
-        if ($request->method() == 'POST') {
-            $request->flash();
-            $newsItem = $request->only([
-                'category_id',
-                'is_private',
-                'title',
-                'text'
-            ]);
-
-            if (!empty($request['is_private'])) {
-                $newsItem['is_private'] = 0;
-            } else {
-                $newsItem['is_private'] = 1;
-            }
-
-                $newsItem['category_id'] = +($newsItem['category_id']);
-
-                $newsItem['image'] = "";
-
-            if ($request->hasFile('image')) {
-                $path = Storage::putFile('public', $request->file('image'));
-                $newsItem['image'] = Storage::url($path);
-            }
-
-//            $news->title= $newsItem->input('title');
-//            $news->text= $newsItem->input('text');
-//            $news->image= $newsItem->input('image');
-//            $news->is_private= $newsItem->input('is_private');
-//            $news->category_id= $newsItem->input('category_id');
-//
-//            $news->save();
-//
-           // dd($newsItem);
-
-
-           $news->fill($newsItem);
-
+            $news->image=\Storage::url($path);
             $news->save();
 
-            return redirect()->route('admin.news.edit_add', $news)->with(['news'=>$news]);
+
         }
-        ;
-        return view('admin.news.add', [
-            'categories' => Category::all(),
-            'news'=>$news
-        ]);
+
+        return redirect()->back()->with('success', 'Новость успешно добавлена');
     }
 
-    public function homeAdmin()
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\News  $news
+     * @return \Illuminate\Http\Response
+     */
+    public function show(News $news)
     {
 
-        return view('admin.index');
+
+        return view('admin.news.show',['news'=>$news]);
+
     }
 
-    public function editAdmin()
-    {
-        //$news=DB::select("SELECT * FROM news");
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\News  $news
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(News $news){
 
-        //$news = News1::getNews();
-        $news=News::paginate(1);
-        return view('admin.news.edit', ['news' => $news]);
+        return view('admin.news.edit',['news'=>$news,'categories'=>Category::all()]);
     }
 
-    public function deliteNew($id)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\News  $news
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, News $news)
     {
 
-        News1::deleteNews($id);
+        $request->validate(News::rules());
 
-        return redirect()->route('admin.news.edit');
+        $news->update($request->all());
+
+        if($request->hasFile('image')){
+
+        $path= Storage::putFile('public', $request->file('image'));
+
+        $news->image=Storage::url($path);
+
+        $news->save();
+
+
+    }
+
+        return redirect()->back()->with('success', 'Новость успешно добавлена');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\News  $news
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(News $news)
+    {
+
+        $news->delete();
+
+
+
+        return redirect()->back()->with('error','Новость удалена');
+
+
     }
 }
