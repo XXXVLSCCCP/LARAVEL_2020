@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Storage;
 use Validator;
+use App\http\Requests\UpDateNewsRequest;
 
 class NewsController extends Controller
 {
@@ -43,10 +44,8 @@ class NewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UpDateNewsRequest $request)
     {
-
-        $request->validate(News::rules());
 
 
         $news=News::create( $request->all());
@@ -96,10 +95,10 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(UpDateNewsRequest $request, News $news)
     {
 
-        $request->validate(News::rules());
+//        $request->validate(News::rules());
 
         $news->update($request->all());
 

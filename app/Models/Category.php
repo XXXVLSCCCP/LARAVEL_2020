@@ -11,7 +11,6 @@ class Category extends Model
     protected $Fillable=[
         'slug',
         'title',
-        'text',
     ];
 
 

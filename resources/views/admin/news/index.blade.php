@@ -8,7 +8,7 @@
                 <div class="card-header">Добавить новость</div>
 
                 <div class="card-body">
-                    <a href="{{ route('admin.create')}}" style="margin: 30px; " class="btn btn-success">Добавить новость</a>
+                    <a href="{{ route('admin.news.create')}}" style="margin: 30px; " class="btn btn-success">Добавить новость</a>
 
 
                         @forelse($news as $item)
@@ -33,8 +33,8 @@
 
                             </figure>
                             <div style="display: inline-block">
-                                <a href="{{ route('admin.edit',$item) }}" type="button" class="btn btn-primary">Редактировать</a>
-                                <a href='{{route('admin.destroy',$item)}}' class="btn btn-danger"
+                                <a href="{{ route('admin.news.edit',$item) }}" type="button" class="btn btn-primary">Редактировать</a>
+                                <a href='{{route('admin.news.destroy',$item)}}' class="btn btn-danger"
 
                                    onclick="event.preventDefault();
                                                      document.getElementById('delete-form').submit();">
@@ -42,12 +42,12 @@
 
                                     Удалить</a>
 
-                                <form id="delete-form" action="{{ route('admin.destroy',$item)}}" method="POST" style="display: none;">
+                                <form id="delete-form" action="{{ route('admin.news.destroy',$item)}}" method="POST" style="display: none;">
 
                                     @method('DELETE')
                                     @csrf
                                 </form>
-                                <a style=" margin-left: 50px" href="{{route('admin.show',[$item->id])}}">Подробнее.....</a>
+                                <a style=" margin-left: 50px" href="{{route('admin.news.show',[$item->id])}}">Подробнее.....</a>
 
                                 <hr>
 

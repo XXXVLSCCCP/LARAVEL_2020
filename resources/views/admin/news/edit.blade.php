@@ -18,7 +18,7 @@
                     {{--                        @endforeach--}}
                     {{--                    @endif--}}
 
-                    <form method="POST" action="{{ route ('admin.update', $news) }}" enctype='multipart/form-data'>
+                    <form method="POST" action="{{ route ('admin.news.update', $news) }}" enctype='multipart/form-data'>
 
                         @method('PATCH')
                         @csrf

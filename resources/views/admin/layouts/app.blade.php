@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@section('title')NEWS_ZHIZDRA @show</title>
+    <title>@section('title')NEWS_WORLD @show</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

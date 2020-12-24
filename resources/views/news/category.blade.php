@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title')
 
-    @parent -Новости первой категории
+    @parent -Новости категориЙ
 
 @endsection
 @section('content')

@@ -43,14 +43,24 @@ Route::group(['prefix' => '/news', 'as' => 'news.'], function () {
 
 
 
-Route::group(['prefix'=>'/admin','namespace'=>'Admin', 'as'=>'admin.' ], function(){
-    Route::get('/','NewsController@index')->name('index');
-    Route::get('/create','NewsController@create')->name('create');
-    Route::post('/','NewsController@store')->name('store');
-    Route::get('/{news}','NewsController@show')->name('show');
-    Route::get('/{news}/edit','NewsController@edit')->name('edit');
-    Route::DELETE('/{news}','NewsController@destroy')->name('destroy');
-    Route::patch('/{news}','NewsController@update')->name('update');
+Route::group(['prefix'=>'/admin','namespace'=>'Admin', 'as'=>'admin.','middleware'=> ['auth','role:admin']], function(){
+
+    Route::get('/', 'IndexAdminController@index')->name('index');
+   Route::resource('news', 'NewsController');
+    Route::resource('users', 'UserController');
+
+
+
+    //    Route::resource('users','UserController');
+//    Route::get('/news','NewsController@index')->name('index');
+//    Route::get('/news/create','NewsController@create')->name('create');
+//    Route::post('/news','NewsController@store')->name('store');
+//    Route::get('/news/{news}','NewsController@show')->name('show');
+//    Route::get('/news/{news}/edit','NewsController@edit')->name('edit')->middleware('newsvalidat');
+//    Route::DELETE('/news/{news}','NewsController@destroy')->name('destroy');
+//    Route::patch('/news/{news}','NewsController@update')->name('update');
+
+    Route::get('/parser', 'ParserController@index')->name('parser.index');
 });
 
 
@@ -83,6 +93,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 //
 //    return $response;
 //});
+
+
+//Auth::routes(['register' => false]);
+///auth/Facebook
+
+Route::get('/auth/vk', 'Auth\LoginController@authVk');
+Route::get('/auth/vk/response', 'Auth\LoginController@responseVk');
+
+Route::get('/auth/Facebook', 'Auth\LoginController@authFacebook');
+Route::get('/auth/Facebook/response', 'Auth\LoginController@responseFacebook');
 
 
 

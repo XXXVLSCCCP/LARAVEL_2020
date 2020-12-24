@@ -10903,19 +10903,3 @@ a.text-dark:focus {
   }
 }
 
-.footer{
-    position: fixed;
-    height: 40px;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
-
-
-}
-.card-body{
-    margin-bottom: 100px;
-}
-.rounded {
-    width: 100px;
-}
-

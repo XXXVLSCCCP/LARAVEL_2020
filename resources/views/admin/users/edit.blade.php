@@ -13,6 +13,11 @@
                 <div class="card-body">
                     {{$user}}
 
+                    <user-edit-component
+                        :initial-user="{{json_encode($user)}}">
+
+                    </user-edit-component>
+
 
                 </div>
             </div>

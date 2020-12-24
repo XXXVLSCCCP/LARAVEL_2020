@@ -11,10 +11,12 @@
             <div class="card">
                 <div class="card-header">Главная Админки</div>
 
-                <div class="card-body">
-                    <a href="/admin/news/editNews">Добавить новости</a>
-                    <a href="/admin/news/editNews">Редактировать новости</a>
-                </div>
+                <li class="list-group-item">
+                    <a href="{{ route("admin.news.index") }}">Редактировать новости</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{{ route('admin.users.index') }}">Редактировать пользователей</a>
+                </li>
             </div>
         </div>
     </div>

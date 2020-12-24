@@ -45,7 +45,6 @@ class AdminNewsTest extends TestCase
             'image'       => '',
             'is_private'  => rand(0,1),
             'title'       => $this->faker->sentence(rand(3,10)),
-            'spoiler'     => $this->faker->text(rand(100,300)),
             'text'        => $this->faker->text(rand(100,3000)),
         ];
 
@@ -85,7 +84,6 @@ class AdminNewsTest extends TestCase
             'image'       => '',
             'is_private'  => rand(0,1),
             'title'       => $newTitle,
-            'spoiler'     => $newSpoiler,
             'text'        => $news->text,
         ];
 

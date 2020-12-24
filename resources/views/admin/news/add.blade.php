@@ -18,7 +18,7 @@
                         @endforeach
                     @endif
 
-                    <form method="POST" action="{{ route ('admin.store') }}" enctype='multipart/form-data'>
+                    <form method="POST" action="{{ route ('admin.news.store') }}" enctype='multipart/form-data'>
                         @csrf
                         <div class="form-group">
                             <input class="form-control @error('title') is-invalid @enderror" type="text" placeholder="Заголовок" name="title"

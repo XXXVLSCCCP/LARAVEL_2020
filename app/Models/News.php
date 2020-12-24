@@ -24,17 +24,17 @@ class News extends Model
     }
 
 
-    static function rules(){
-
-        return [
-
-            'id',
-            'category_id' => 'required|integer|exists:category,id',
-            'is_private' => 'min:0|max:1',
-            'title' => 'required',
-            'text' => 'required',
-            'image' => 'image',
-
-        ];
-    }
+//    static function rules(){
+//
+//        return [
+//
+//            'id',
+//            'category_id' => 'required|integer|exists:category,id',
+//            'is_private' => 'min:0|max:1',
+//            'title' => 'required',
+//            'text' => 'required',
+//            'image' => 'image',
+//
+//        ];
+//    }
 }

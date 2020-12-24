@@ -22,7 +22,6 @@ class CreateCategoryNewsTable extends Migration
             $table->bigIncrements('id');
             $table->string('slug')->comment('slug');
             $table->string('title');
-            $table->text('text');
             $table->timestamps();
 
 
