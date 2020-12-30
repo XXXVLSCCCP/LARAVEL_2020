@@ -105,6 +105,8 @@ Route::get('/auth/Facebook', 'Auth\LoginController@authFacebook');
 Route::get('/auth/Facebook/response', 'Auth\LoginController@responseFacebook');
 
 
-
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth','role:admin']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 
 

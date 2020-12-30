@@ -27,7 +27,8 @@
                         @endif
 
                         <h5 style="float: left">{{$news->title}}</h5>
-                        <p style="float: left">{{$news->text}}</p>
+                        <p style="float: left">{{!!$news->text!!}}</p>
+                        <p>Ссылка на новость:</p><a href="{{$news->link}}" target="_blank">Нажми для перехода на новость</a>
 
 
                 </div>

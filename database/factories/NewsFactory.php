@@ -12,7 +12,9 @@ $factory->define(News::class, function (Faker $faker) {
         'image' => '',
         'is_private' =>rand(0,1),
         'title' => $faker->sentence(rand(3,10)),
+        'spoiler'     => $faker->text(rand(100,300)),
         'text' => $faker->text(rand(100,3000)),
+
     ];
 });
 

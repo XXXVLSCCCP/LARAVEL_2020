@@ -8,7 +8,7 @@ use App\User;
 
 class UserRepository
 {
-    public function getOrCreateUserBySocData(\SocialiteProviders\Manager\OAuth2\User $userData, $socType)
+    public function getOrCreateUserBySocData( $userData, $socType)
     {
 
 
@@ -19,11 +19,11 @@ class UserRepository
 
         if(empty($user)) {
             $user = User::create([
-                'name' => $userData->getNickname(),
+                'name' => $userData->getname(),
                 'email' => $userData->getEmail(),
                 'role' => 'user',
                 'password' => '',
-                'id_at_soc' => $userData->getId(),
+                'id_at_soc' => $userData->getId()->default('int'),
                 'soc_type' => $socType,
             ]);
         }

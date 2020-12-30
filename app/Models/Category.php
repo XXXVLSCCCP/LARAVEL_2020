@@ -8,7 +8,7 @@ class Category extends Model
 {
     protected $table = 'category';
 
-    protected $Fillable=[
+    protected $fillable=[
         'slug',
         'title',
     ];

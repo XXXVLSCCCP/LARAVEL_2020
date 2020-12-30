@@ -14,8 +14,8 @@ class AddSocialFieldsAtUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('id_at_soc')->default(null);
-            $table->string('soc_type')->default(null);
+            $table->string('id_at_soc')->nullable()->default(null);
+            $table->string('soc_type')->nullable()->default(null);
         });
     }
 

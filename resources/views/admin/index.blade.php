@@ -17,6 +17,9 @@
                 <li class="list-group-item">
                     <a href="{{ route('admin.users.index') }}">Редактировать пользователей</a>
                 </li>
+                <li class="list-group-item">
+                    <a href="{{ route('admin.parser.index') }}">Пропарсить новости</a>
+                </li>
             </div>
         </div>
     </div>

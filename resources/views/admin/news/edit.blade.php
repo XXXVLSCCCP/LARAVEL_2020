@@ -53,7 +53,17 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control @error('text') is-invalid @enderror" name="text">{{old('text') ?? $news->text}}</textarea>
+                            <textarea class="form-control @error('spoiler') is-invalid @enderror" name="spoiler" id="spoiler">{{old('spoiler') ?? $news->spoiler}}</textarea>
+                        </div>
+                        @foreach($errors->get('spoiler') as $error)
+
+                            <div class="text-danger">
+                                {{$error}}
+                            </div>
+
+                        @endforeach
+                        <div class="form-group">
+                            <textarea class="form-control @error('text') is-invalid @enderror" name="text" id="text">{{old('text') ?? $news->text}}</textarea>
                         </div>
                         @foreach($errors->get('text') as $error)
 
@@ -96,4 +106,23 @@
     </div>
 </div>
 @endsection
+
+
+@push('js')
+
+    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <script>
+        var options = {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+        };
+
+        let elem = document.getElementById('text');
+
+        CKEDITOR.replace(elem, options);
+    </script>
+
+@endpush
 

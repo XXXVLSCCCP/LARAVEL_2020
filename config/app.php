@@ -163,8 +163,9 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
 
-        \SocialiteProviders\Manager\ServiceProvider::class,
-        \SocialiteProviders\Manager\ServiceProvider::class,
+        SocialiteProviders\Manager\ServiceProvider::class,
+        SocialiteProviders\Manager\ServiceProvider::class,
+        App\Providers\CalcProvider::class,
 
 
         /*

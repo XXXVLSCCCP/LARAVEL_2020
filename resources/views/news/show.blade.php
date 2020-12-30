@@ -27,7 +27,8 @@
                         @endif
 
                         <h5 style="float: left">{{$item->title}}</h5>
-                        <p style="float: left">{{$item->text}}</p>
+                        <p style="float: left">{{!!$item->text!!}}</p>
+                        <p>Ссылка на новость:</p><a href="{{$item->link}}  " target="_blank">Нажми для перехода на новость</a>
                     @endforeach
                 </div>
             </div>

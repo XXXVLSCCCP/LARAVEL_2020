@@ -8,7 +8,7 @@
                 <div class="card-header">Добавить новость</div>
 
                 <div class="card-body">
-                    <a href="{{ route('admin.users.create')}}" style="margin: 30px; " class="btn btn-success">Добавить новость</a>
+                    <a href="{{ route('admin.users.create')}}" style="margin: 30px; " class="btn btn-success">Добавить пользователя</a>
 
 
                         @forelse($users as $user)

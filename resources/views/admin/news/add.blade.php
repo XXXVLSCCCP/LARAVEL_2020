@@ -50,6 +50,18 @@
                                 @endforeach
                             </select>
                         </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control @error('spoiler') is-invalid @enderror" name="spoiler">{{old('spoiler') }}</textarea>
+                        </div>
+                        @foreach($errors->get('spoiler') as $error)
+
+                            <div class="text-danger">
+                                {{$error}}
+                            </div>
+
+                        @endforeach
+
                         <div class="form-group">
                             <textarea class="form-control @error('text') is-invalid @enderror" name="text">{{old('text') }}</textarea>
                         </div>

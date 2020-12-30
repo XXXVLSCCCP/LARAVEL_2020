@@ -2,41 +2,50 @@
 
 
 namespace App\Library;
+use App\Library\Intefaces\CalcInterface;
+use Closure;
 
-
-class Calc
+class Calc implements CalcInterface
 {
     protected $total;
 
-    public function __construct($total=0){
-
-        $this->total=$total;
-
+    public function __construct($total = 0)
+    {
+        $this->total = $total;
     }
-    public function add($amoun){
 
-        $this->total += $amoun;
+    public static function createCalc($total = 0)
+    {
+        return new self($total);
+    }
 
+    public function add(int $amount)
+    {
+        $this->total += $amount;
 
         return $this;
-
     }
 
-    public function sub($amoun){
-
-        $this->total -= $amoun;
+    public function sub(int $amount)
+    {
+        $this->total -= $amount;
 
         return $this;
-
     }
 
-    public function thisResult($amoun){
+    public function apply(Closure $closure)
+    {
+        $this->total = $closure($this->total);
 
+        return $this;
+    }
+
+    public function result()
+    {
         return $this->total;
-
-
-
     }
+
+
 
 
 }

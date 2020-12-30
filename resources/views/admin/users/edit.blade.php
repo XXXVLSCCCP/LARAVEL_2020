@@ -11,7 +11,6 @@
             <div class="card">
                 <div class="card-header">{{$user->name}}</div>
                 <div class="card-body">
-                    {{$user}}
 
                     <user-edit-component
                         :initial-user="{{json_encode($user)}}">

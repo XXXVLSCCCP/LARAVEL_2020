@@ -20,6 +20,7 @@ class CreateNewsTable extends Migration
             $table->string('image')->default('') ->comment('фото');
             $table->boolean('is_private');
             $table->string('title');
+            $table->text('spoiler');
             $table->text('text');
             $table->timestamps();
         });

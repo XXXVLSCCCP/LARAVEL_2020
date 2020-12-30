@@ -15,14 +15,15 @@
                         <h4>{{$news->first()->category->title}}</h4>
 
                         @foreach ($news as $newsCtegory)
-                            @if(!$newsCtegory->is_private)
+                            @if($newsCtegory->is_private == 1)
                                 <figure class="figure">
                                     <img
                                         src="{{$newsCtegory->image ? $newsCtegory->image : 'http://placehold.it/100x100'}}"
                                         style="float: left; padding: 10px; margin: 0; width: 100px"
                                         class="figure-img img-fluid rounded" alt="Фото">
                                     <figcaption style="text-overflow: clip; overflow: hidden; height: 160px"
-                                                class="figure-caption">{{$newsCtegory->text}}
+                                                class="figure-caption">{{$newsCtegory->spoiler}}
+                                        <p>Ссылка на новость:</p><a href="{{$newsCtegory->link}} " target="_blank">Нажми для перехода на новость</a>
                                     </figcaption>
 
 

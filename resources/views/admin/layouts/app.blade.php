@@ -20,7 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
+="<div>
     @include('admin._partisals.header')
 
     <main class="py-4">
@@ -39,5 +39,7 @@
 </div>
 
 @include('admin._partisals.footer')
+
+@stack('js');
 </body>
 </html>

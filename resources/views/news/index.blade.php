@@ -14,11 +14,9 @@
                 <div class="card-body">
 
 
-
-
                         @forelse($news as $item)
 
-                            @if($item->is_private)
+                            @if($item->is_private == 1 || !empty(Auth::id()))
 
                                 <figure class="figure">
                                     <h4>{{$item->title}}</h4>
@@ -29,12 +27,13 @@
 
                                     @else
 
-                                        <img src="{{$item->image}}" style="float: left; padding: 10px; margin: 0"
+                                        <img src="{{$item->image}}" style="float: left; padding: 10px; margin: 0; width: 200px"
                                              class="figure-img img-fluid rounded" alt="Фото">
 
                                     @endif
                                     <figcaption style="text-overflow: clip; overflow: hidden; height: 160px"
-                                                class="figure-caption">{{$item->text}}
+                                                class="figure-caption">{{$item->spoiler}}
+                                        <p>Ссылка на новость:</p><a href="{{$item->link}}" target="_blank">Нажми для перехода на новость</a>
                                     </figcaption>
                                 </figure>
                                 <a style="display: block" href="/news/{{$item->id}}">Подробнее.....</a>

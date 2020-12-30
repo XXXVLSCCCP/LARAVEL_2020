@@ -27,7 +27,8 @@
 
                                 @endif
                                 <figcaption style="text-overflow: clip; overflow: hidden; height: 160px"
-                                            class="figure-caption">{{$item->text}}
+                                            class="figure-caption">{{$item->spoiler}}
+                                    <p>Ссылка на новость:</p><a href="{{$item->link}} " target="_blank">Нажми для перехода на новость</a>
                                 </figcaption>
 
 
